@@ -36,7 +36,7 @@ server.post('/api/users', async (req, res) => {
             res.status(400).json({ message: "Please provide name and bio for the user"})
         } else {
             const createdUser = await User.insert({ name, bio })
-            res.status(201).json({ data: createdUser })
+            res.status(201).json({ createdUser })
         }
  
     } catch (err) {
